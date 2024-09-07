@@ -37,12 +37,9 @@ class UserFeatureProvider extends ServiceProvider
      */
     public function mapRoutes(): void
     {
-        // Route::prefix('/api/' . Str::plural($this->featureNameLower))
-            // ->middleware('auth:sanctum')
-            // ->group(__DIR__ . '/Routes/sanctum.php');
 
         Route::prefix('/api/' . Str::plural($this->featureNameLower))
-            ->group(__DIR__ . '/Routes/guest.php');
+            ->group(__DIR__ . '/Routes/api.php');
     }
 
     /**
