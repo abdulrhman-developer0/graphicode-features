@@ -61,8 +61,8 @@ class FeatureMakeCommand extends Command
         $path = Stub::make('routes', "{$featurePath}/Routes/guest.php");
         $this->info("Generate [$featurePath] - DONE");
 
-        $path = Stub::make('routes', "{$featurePath}/Routes/sanctum.php");
-        $this->info("Generate [$featurePath] - DONE");
+        // $path = Stub::make('routes', "{$featurePath}/Routes/sanctum.php");
+        // $this->info("Generate [$featurePath] - DONE");
 
         return 0;
     }
