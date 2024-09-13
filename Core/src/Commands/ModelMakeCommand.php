@@ -22,7 +22,7 @@ class ModelMakeCommand extends BaseCommand
 
     public function createMigration()
     {
-        $name = 'create_' . Str::plural( strtolower($this->getNameInput()) ) . '_table';
+        $name = 'create_' . Str::plural( Str::snake($this->getNameInput()) ) . '_table';
         $this->call('feature:make-migration', [
             'name'      => $name,
             'feature'   => $this->getFeatureInput()

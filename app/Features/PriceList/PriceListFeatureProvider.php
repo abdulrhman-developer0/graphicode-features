@@ -1,17 +1,17 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\Features\PriceList;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
-class {{ class }} extends ServiceProvider
+class PriceListFeatureProvider extends ServiceProvider
 {
-    public $featureName = "{{ name }}";
+    public $featureName = "PriceList";
 
-    public $featureNameLower = "{{ nameLower }}";
+    public $featureNameLower = "pricelist";
 
     /**
      * Register services.

@@ -21,6 +21,7 @@ class FeaturesServiceProvider extends ServiceProvider
             \Graphicode\Features\Commands\ControllerMakeCommand::class,
             \Graphicode\Features\Commands\RequestMakeCommand::class,
             \Graphicode\Features\Commands\ResourceMakeCommand::class,
+            \Graphicode\Features\Commands\ServiceMakeCommand::class,
         ]);
 
         $featuresNamespace = "App\\Features\\";

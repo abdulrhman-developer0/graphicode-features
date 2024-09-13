@@ -21,8 +21,8 @@ class MigrateMakeCommand extends Command
         $feature = $this->argument('feature');
 
 
-        $filename         = now()->format('Y_m_d_hi') . '_' . $name;
-        $featureStudly      = Str::studly($feature);
+        $name              =    Str::snake($this->argument('name')) ;
+        $featureStudly     = Str::studly($feature);
         $featurePath       = app_path("Features/$featureStudly");
 
         if (! File::exists($featurePath)) {
@@ -30,15 +30,14 @@ class MigrateMakeCommand extends Command
             return;
         }
 
-        $filePath = "$featurePath/Migrations/$filename.php";
-        if (File::exists($filePath)) {
-            $this->error("File [$filePath] Already exists");
-            return;
-        }
 
 
-        preg_match('/([a-zA-Z0-9]+)_([a-zA-Z0-9]+)_table$/', $filename, $matches);
+        $pattern = '/^([a-zA-Z0-9]+)_([a-zA-Z0-9_]+)_table$/';
+        preg_match($pattern, $name, $matches);
         list($name, $type, $table) = $matches;
+
+        $filename         = now()->format('Y_m_d_hi') . '_' . $name;
+        $filePath = "$featurePath/Migrations/$filename.php";
 
         $path = Stub::make("migration.$type", $filePath, [
             'table'     => $table

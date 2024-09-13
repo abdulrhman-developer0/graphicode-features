@@ -21,7 +21,7 @@ class ResourceMakeCommand extends BaseCommand
         if ($this->option('collection')) {
             $stub = 'resource-collection';
         } else {
-            return 'resource';
+            $stub = 'resource';
         }
 
         return "$stub.stub";

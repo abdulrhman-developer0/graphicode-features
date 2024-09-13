@@ -1,12 +1,12 @@
 -<?php
 
-    namespace {{ namespace }};
+    namespace App\Features\TestTest\Controllers;
 
     use Graphicode\Standard\Traits\ApiResponses;
     use Illuminate\Routing\Controller;
     use Illuminate\Http\Request;
 
-    class {{ class }} extends Controller
+    class TestController extends Controller
     {
         use ApiResponses;
 

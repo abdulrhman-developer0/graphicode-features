@@ -1,17 +1,17 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\Features\TestTest;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
-class {{ class }} extends ServiceProvider
+class TestTestFeatureProvider extends ServiceProvider
 {
-    public $featureName = "{{ name }}";
+    public $featureName = "TestTest";
 
-    public $featureNameLower = "{{ nameLower }}";
+    public $featureNameLower = "testtest";
 
     /**
      * Register services.

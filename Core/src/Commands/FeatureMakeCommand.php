@@ -43,26 +43,22 @@ class FeatureMakeCommand extends Command
         $path = Stub::make('provider.feature', "{$featurePath}/$providerClass.php", [
             'namespace'     => $rootNamespace,
             'class'         => $providerClass,
-            'name'          => $name,
+            'name'          => $nameStudly,
             'nameLower'     => Str::lower($name)
         ]);
         $this->info("Generate [$featurePath] - DONE");
 
-        $path = Stub::make('controller.abstract', "{$featurePath}/Controllers/Controller.php", [
-            'namespace' => "$rootNamespace\\Controllers",
-        ]);
-        $this->info("Generate [$featurePath] - DONE");
-
-        $path = Stub::make('config', "{$featurePath}/Config/config.php", [
+        $configFile = Str::snake($nameStudly);
+        $path = Stub::make('config', "{$featurePath}/Config/$configFile.php", [
             'name'  => $nameStudly
         ]);
         $this->info("Generate [$featurePath] - DONE");
 
-        $path = Stub::make('routes', "{$featurePath}/Routes/api.php");
+        $path = Stub::make('routes', "{$featurePath}/Routes/api.php", [
+            'pluralPrefix' => Str::plural(  Str::kebab($nameStudly) )
+        ]);
         $this->info("Generate [$featurePath] - DONE");
 
-        // $path = Stub::make('routes', "{$featurePath}/Routes/sanctum.php");
-        // $this->info("Generate [$featurePath] - DONE");
 
         return 0;
     }
