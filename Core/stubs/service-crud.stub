@@ -17,7 +17,7 @@ class {{ class }}
         try {
             ${{ modelPlural }} =  self::$model::get();
 
-            return ${{ modelPlural }}s;
+            return ${{ modelPlural }};
         } catch (\Exception $e) {
             return $e->getMessage();
         }
